@@ -1,0 +1,782 @@
+/*Box reset Code*/	
+
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		max-height: 999999px;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section, hero {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	html {
+	  box-sizing: border-box;
+	}
+	*, *:before, *:after {
+	  box-sizing: inherit;
+	}
+	a {
+		text-decoration: none;
+	}
+
+
+html body {
+	font: 16px 'PT Sans', Helvetica, Arial;
+	min-width: 100%;
+	min-height: 100%;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0px;
+	
+}
+
+@media (max-width: 768px){
+
+	body {
+		min-height: 100%;
+		min-width: 100%;
+
+	}	
+}
+
+.clearfix:after {
+	clear:both;
+	content:".";
+	display: block;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.header, .footer {
+	border-bottom: transparent solid grey;
+	}
+
+/* START OF HEADER CODE
+===================
+ END OF BOX CODE*/
+
+.header {
+	top: 0;
+	position: fixed;
+	width: 100%;
+	min-width: 880px;
+	height: 49px;
+	min-height: 49px;
+	overflow: hidden;
+	background-color: white;
+	z-index: 1000; /*did this because I set .hero to Position:Relative;*/
+}
+
+.header .container {
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 30px;
+}
+
+.header .logo {
+	margin: -14px 20px 10px 20px;
+}
+.slogan {
+	position: absolute;
+	margin: 1px 0 0 22px;
+	font-style: italic;
+	font-size: 12px; 
+}
+
+/*NEW HEADER*/
+
+.header-links {
+	position: relative;
+	float: right;
+	display: block;
+	margin: -48px -30em;
+	width: 62em;
+	border-bottom: transparent;
+	text-align: center;
+
+}
+
+.header-links-container {
+    height: 75px;
+
+}
+
+.header-links-container div {
+    position: relative;
+    margin: 0 .5%;
+    float: left;
+    text-align: center;
+    width: 115px;  
+    background: black;
+    color: white;
+    font-weight: bold; 
+}
+
+.header-links-container .div5 {
+    height: 5px;					/*hides the sliding panels before*/
+}
+
+
+.header-links-container .what-we-do {
+	-webkit-transition: height 0.6s; /* Safari */
+	-moz-transition: height 0.6s;
+	-o-transition: height 0.6s;
+	transition: height 0.6s;
+}
+
+.header-links-container .classes {
+  -webkit-transition: height 0.8s; /* Safari */
+    -moz-transition: height 0.8s;
+    -o-transition: height 0.8s;
+    transition: height 0.8s;
+}
+
+.header-links-container .contact {
+  -webkit-transition: height 0.8s; /* Safari*/ 
+    -moz-transition: height 0.8s;
+    -o-transition: height 0.8s;
+    
+}
+
+.header-links-container .blog { /* Contact Us tab and others transition at dif times to make it more interesting */
+  -webkit-transition: height 1s; /* Safari */
+    -moz-transition: height 1s;
+    -o-transition: height 1s;
+    transition: height 1s;
+
+}
+
+.header-links-container .contact {
+    height: 50px;                       /*HOME tab should not be hidden in beginning - this is to prevent that */
+  }
+
+.header-links-container a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    text-decoration: none;
+    line-height: 50px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    color: white;
+    font-weight: 300;
+
+    /* Code Below is to create a MOUSE OFF transition */
+    -webkit-transition: 1.0s 0.3s ease-in-out;
+    -webkit-transition-delay: 1.0s 0.3s ease-in-out;
+    -o-transition: 1.0s 0.3s ease-in-out;
+    -o-transition-delay: 1.0s 0.3s ease-in-out;
+    -moz-transition: 1.0s 0.3s ease-in-out;
+    -moz-transition-delay: 1.0s 0.3s ease-in-out;
+    transition: 1.0s 0.3s ease-in-out;
+    transition-delay: 1.0s 0.3s ease-in-out;
+}
+
+.div5 a {
+    color: #0B1C5C; /*matches color of main button*/
+}
+
+/* For Safari 3.1 to 6.0*/ 
+.header-links-container .div5 .home {-webkit-transition-timing-function: ease-in-out;}
+.header-links-container .div5 .home {-moz-transition-timing-function: ease-in-out;}
+.header-links-container .div5 .home {-o-transition-timing-function: ease-in-out;}
+/*Standard syntax*/
+.header-links-container .div5, .home {transition-timing-function: ease-in-out;}
+
+
+
+.header-links-container:hover .div5 {
+    height:50px !important;
+}
+
+.header-links-container:hover .what-we-do a {
+    -webkit-transition: color 1.2s 0.1s ease-in-out;
+    -moz-transition: color 1.2s 0.1s ease-in-out;
+    -o-transition: color 1.2s 0.1s ease-in-out;
+    transition: color 1.2s 0.1s ease-in-out;
+    color: rgb(245,245,245) !important;
+}
+
+.header-links-container:hover .classes a {
+    -webkit-transition: color 1.2s 0.2s ease-in-out;
+    -moz-transition: color 1.2s 0.2s ease-in-out;
+    -o-transition: color 1.2s 0.2s ease-in-out;
+    transition: color 1.2s 0.2s ease-in-out;
+    color: rgb(245,245,245) !important;
+}
+
+.header-links-container:hover .blog a {
+    -webkit-transition: color 0.2s 0.3s ease-out;
+    -moz-transition: color 1.2s 0.3s ease-in-out;
+    -o-transition: color 1.2s 0.3s ease-in-out;
+    transition: color 1.2s 0.3s ease-in-out;
+    color: rgb(245,245,245) !important;
+}
+
+.header-links-container div:hover {
+	background-color: #0B1C5C !important;
+}
+
+/* END HEADER CODE
+===================
+ START OF HERO CODE*/
+
+
+.hero-wrapper {
+	position: relative;
+	margin-top: 0px;
+	background-size: cover;
+	text-align: center; 		/*NECESSARY TO SET CHILD ELEMENTS CENTERED*/
+	width: auto;
+	min-height: 55em; 
+	/*max-height: 95vh;*/
+	min-width: 1280px;
+	height: 100vh;
+	}
+
+.hero {
+	padding-top: 5%;
+}
+
+/*VIDEO BACKGROUND TEST CSS */
+
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -99;
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    z-index: -99;
+    min-width: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+    background: url('./images/mattjjb2.jpg') center center / cover no-repeat; /*THUMBNAIL AND PICTURE WHEN ON MOBILE*/
+  }
+
+  .fullscreen-bg__video {
+    display: none;
+  }
+}
+
+.overlay {
+	background: #181b23 url(./images/overlays/black-medium-checks.png) repeat;
+	background-color: #fff;
+	position: absolute; /*UNDER THE VIDEO-BG DIV - THIS ALLOWS US TO KEEP IT SIZED NORMALLY DURING RESIZING*/
+	height: 100%;
+	width: 100%;
+	top: 0;
+    left: 0;
+	opacity: 0.2;
+	z-index: -10;
+	}
+
+.black-overlay {
+	background-color: rgba(0,0,0,0.6);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* opacity: 0.9; */
+    position: absolute;				/*UNDER THE VIDEO-BG DIV - THIS ALLOWS US TO KEEP IT SIZED NORMALLY DURING RESIZING*/
+    z-index: -9;
+
+	}	
+
+/*END TEST*/
+
+/*.hero .container {
+	background: #000 url(./images/mattjjb2.jpg) no-repeat;
+	background-size: cover;
+	text-align: center;
+	width: auto;
+	height: 90vh;
+}*/
+
+.hero h1 {
+	font-size: 58px;
+	color: rgb(235,235,235);
+	font-weight: bold;
+	display: block;   				/*NECESSARY TO CENTER ELEMENT IN .HERO DIV*/
+	/*margin: 0px 0 30px;*/
+	padding-top: 45px;
+	margin-left: auto;				/*NECESSARY TO CENTER */
+	margin-right: auto;
+	width: 850px;
+	text-shadow: 2px 2px black;
+}
+
+.hero-blurb {
+	display: block;
+    margin: 50px auto -40px auto;
+    color: white;
+    width: 700px;
+}
+
+.btn {
+	display: inline-block;
+	width: 300px;
+	line-height: 50px;
+	border: 1px solid transparent;
+	margin: 110px 15px 0 0;
+	padding: 5px 0px 5px 25px;
+	/*border-radius: 10px;*/
+	color: rgb(235,235,235);
+	font-size: 22px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.5s;
+	/*border: 1px solid grey;
+	width: 160px;
+	float: left;
+	padding: 15px;
+	margin-right: 15px;*/
+}
+
+.btn-blue {
+	/*background-color: #0B1C5C;*/
+	background-color: black;
+	/*box-shadow: 4px 4px #04113F;*/
+}
+
+/*				EXCHANGING IT FOR BUTTON THAT MATCHES HEADER
+.btn-blue {
+	background-color: #0B1C5C;
+	box-shadow: 4px 4px #04113F;
+}*/
+
+/*.btn-grey {							/* TAKEN OUT AS ITS NOT LONGER RELEVANT
+	background-color: #3F424F;	
+	box-shadow: 4px 4px #272C3E;
+	width: 200px;
+}*/
+
+.btn:hover {
+	background-color: #0B1C5C;
+}
+
+.btn span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.btn span:after {
+	content: '>>';
+	position: relative;
+	opacity: 0;
+	top: -1px;
+	right: -40px;
+	transition: 0.5s;
+	font-size: 14px;
+}
+.btn:hover span {
+	padding-right: 40px;
+}
+.btn:hover span:after {
+	opacity: 1;
+	right: -16px;
+}
+
+/* END HERO CODE
+===================				EDITED OUT 26/09
+ START OF MAIN CODE
+
+
+.main {
+	height: 400px;
+	text-align: center;
+	background-color: rgba(255,255,255, 0.6);
+	border-top: 3px solid #B3C4F3;
+	border-bottom: 3px solid #B3C4F3;
+	margin: 20px 0px; 
+	
+	min-width: 1280px; /*for resizing - this pushes down element but keeps it within container*/
+}
+
+
+/*.main .block {							
+	display: inline-block;
+	margin: 40px 20px 0 20px;
+	border: 2px solid transparent;
+	min-width: 300px;
+	width: 330px;
+	height: auto;
+	background-color: #E6E6E6;
+	box-shadow: 5px 5px rgba(0,0,0,0.2);
+
+}
+
+.block-image {
+	margin: 15px;
+	height: 200px;
+}
+
+.workoutgirl1 { 					/*THIS IS THE ONLY FOR THE IMAGE IN THE BLOCKS
+	background: #fff url(images/workoutgirledit4.jpg) no-repeat;
+	background-size: cover;
+	
+}
+
+.workoutgirl2 { 					/*THIS IS THE ONLY FOR THE IMAGE IN THE BLOCKS
+	background: #fff url(images/workoutgirlEDIT2.jpg) no-repeat;
+	background-size: cover;
+}
+
+.workoutgirl3 { 					/*THIS IS THE ONLY FOR THE IMAGE IN THE BLOCKS
+	background: #fff url(images/mattjjb2.jpg) no-repeat;
+	background-size: cover;
+}
+
+.main .block .block-paragraph { 		/*PARAGRAPH IN BLOCKS
+	border-top: 1px solid #B3C4F3;
+	font-size: 13px;
+	font-family: 'PT Serif', Helvetica, Arial;
+	text-align: left;
+	padding: 10px;
+	margin: 0 15px;
+}
+
+.block-paragraph img {
+	float: left;
+	margin: 5px 12px 15px -10px;
+}
+
+/* END MAIN BLOCK(S) CODE
+===================
+START OF CONTENT PAGES */
+
+.moving-pages {
+	display: block;
+	overflow: hidden;
+	height: 65em;
+
+}
+
+#a-propos, #classes, #blog {
+	z-index: 6;
+}
+
+.a-propos-div {
+	position: absolute;
+	top:0;
+	/*left: 1025px;*/
+	left: 73.5%;
+	width: 20px;
+	opacity: 0;
+	height: 0;
+	padding: 0 0 0 0;
+	margin-bottom: -30px;   /* TRYING THIS TO STOP MARGIN*/
+	overflow: hidden;
+}
+
+ .a-propos-div .container {
+ 	background-color: #9B78C8;
+ 	height: 100%;
+ 	width: 100%;
+ 	margin: 0 auto;
+ }
+
+ #a-propos-h1 {
+ 	position: absolute;                  /*removing this, YOU CANNOT RUN THE MARGIN-TOP  BELOW*/
+ 	font-size: 1px;
+ 	color: white;
+ 	font-weight: bold;
+ 	display: block;   				
+ 	/*margin: 0px 0 30px;*/
+ 	padding-top: 45px;
+ 	left: -200px;
+ 	margin-top: 15px;
+ 	margin-left: 0;				
+ 	margin-right: auto;
+ 	width: 850px;
+ 	opacity: 0;
+ 	text-align: left;
+ 	
+ }
+
+ .a-propos-p {
+ 	position: relative;
+ 	width: 100%;
+ 	height: 100%;
+ 	border: 1px solid red;
+ }
+
+#moving-pages-content {
+	position: absolute;
+	display: inline-block;
+	height: 100%;
+	min-width: 1350px;
+	text-align: center;	
+	z-index: 2;
+}
+.mp-header/*, #jjb-header*/ {				/*JIU JITSU BRASILIEN + COACHING + AUTRES*/
+	font-size: 52px;
+	font-family: "PT Sans";
+	color: rgb(0, 0, 0);
+	font-weight: bold;
+	line-height: 0.385;
+	text-align: right;
+	position: absolute;
+	/*left: 1em;*/
+	top: 2.8em;
+}
+
+.mp-text {					/* ALL CONTENT BELOW JJB HEADER*/
+	font-size: 22px;
+	font-family: "PT Sans";
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	line-height: 1.05;
+	text-align: left;
+	position: absolute;
+	/*left: 6em;*/
+	width: 28em;
+	margin-top: 0.3em;
+}
+
+.mp-paragraph {
+    font-family: "PT Sans Narrow";
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 1.25;
+    text-align: left;
+    position: absolute;
+    /*left: 3em;*/
+    width: 29em;
+    margin-top: 0.5em;
+}
+
+.mp-titles {				/*#jjb brasielien*/
+    font-size: 30px;
+    
+	}
+
+.mp-img, .mp-header, .mp-text {	/*to set the images outside of the screen when jQuering them in*/
+	opacity: 0;
+	left: -100em;
+}
+
+/*JJB SPECIFICALLY*/
+
+#jjb-t-p {					/* SAME AS ABOVE BUT JUST JJB CONTENT*/
+	top: 9.5em;
+}
+
+#coaching-t-p{					/* SAME AS ABOVE BUT JUST JJB CONTENT*/
+	top: 18.3em;
+}
+
+#coaching-titles {				/*#coaching*/
+    font-size: 30px;
+    margin-top: 1em;
+}
+
+#autres-t-p {
+	top: 25.9em;
+}
+
+#autres-titles {
+	margin-top: 1em;
+}
+
+#ryu {
+	position: absolute;
+    top: 4em;
+    /*left: 55em;*/
+    width: 36em;
+    opacity: 1;
+}
+
+ /* END A PROPOS CODE
+ ===================
+ START OF COURS PAGES */
+
+ .classes-div {
+ 	position: absolute;
+ 	top: 0;
+ 	/*left: 1150px;*/
+ 	left: 82%;
+ 	width: 20px;
+ 	opacity: 0;
+ 	height: 0;
+ 	padding: 0 0;
+ 	margin-top: 0px;
+ 	overflow: hidden;
+ }
+
+  .classes-div .container {
+  	background-color: #77DD77;
+  	height: 100%;
+  	width: 100%;
+  	margin: 0 auto;
+  }
+
+  #classes-h1 {
+  	position: absolute;                 /*removing this, YOU CANNOT RUN THE MARGIN-TOP  BELOW*/
+  	font-size: 1px;
+  	color: white;
+  	font-weight: bold;
+  	display: block;   				
+  	padding-top: 45px;
+  	margin-top: 15px;
+  	left: -250px;				
+  	margin-right: auto;
+  	width: 850px;
+  	opacity: 0;
+  	text-align: left;
+  }
+
+ /* END COURS CODE
+ ===================
+ START OF BLOG PAGES */
+
+.blog-div {
+	position: absolute;
+	top: 0;
+	/*left: 1275px;*/
+	left: 91.2%;
+	width: 20px;
+	opacity: 0;
+	height: 0;
+	padding: 0 0;
+	margin-top: 0px;
+	overflow: hidden;
+}
+
+ .blog-div .container {
+ 	background-color: #E79A8E;
+ 	height: 100%;
+ 	width: 100%;
+ 	margin: 0 auto;
+ }
+
+ #blog-h1 {
+ 	position: absolute;                  /*removing this, YOU CANNOT RUN THE MARGIN-TOP  BELOW*/
+ 	font-size: 1px;
+ 	color: white;
+ 	font-weight: bold;
+ 	display: block;   				
+ 	padding-top: 45px;
+ 	margin-top: 15px;
+ 	left: -280px;				
+ 	margin-right: auto;
+ 	width: 850px;
+ 	opacity: 0;
+ 	text-align: left;
+ 	/*text-shadow: 2px 2px black;*/
+ }
+
+/* START OF FOOTER CODE*/
+
+.footer {
+	z-index: 7;
+	position: relative;
+	min-height: 25vh;
+	height: 25%; 
+	bottom: 0;
+	width: 100%;
+	min-width: 1280px;
+	background-color: rgba(0,0,0,1);
+	color: white;
+	margin-top: 0;
+	overflow: hidden;
+}	
+
+.footer .footer-nav {
+	margin-left: 3em;
+	margin-top: 0.1em;
+}
+
+.footer-nav .footer-column {
+	position: relative;
+    float: left;
+    margin-left: 1em;
+    margin-top: 2em;
+    padding-right: 3em;
+}
+.footer-column span {
+	font-weight: 400;
+	font-size: 1.3em;
+}
+
+.footer-nav a {
+	color: #8D8B8B;
+	font-size: 0.9em;
+	line-height: 1.6em;
+
+}
+
+.footer-nav a:hover {
+	color: #fff;
+}

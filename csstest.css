@@ -1,0 +1,334 @@
+/*Box reset Code*/	
+
+	html, hero, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		max-height: 999999px;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section, hero {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	html {
+	  box-sizing: border-box;
+	}
+	*, *:before, *:after {
+	  box-sizing: inherit;
+	}
+	a {
+		text-decoration: none;
+	}
+
+
+html body {
+	font: 16px 'Open Sans', Helvetica, Arial;
+	min-width: 800px;
+	min-height: 425px;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0px;
+	
+}
+
+.clearfix:after {
+	clear:both;
+	content:".";
+	display: block;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+}
+
+.header, .footer {
+	border-bottom: transparent solid grey;
+	}
+
+.header {
+	top: 0;
+	position: fixed;
+	width: 100%;
+	min-width: 810px;
+	height: 60px;
+	background-color: white;
+}
+
+.header .container {
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 22px;
+}
+
+.header .logo {
+	margin: 15px 20px 10px 20px;
+}
+.slogan {
+	position: absolute;
+	margin: 1px 0 0 22px;
+	font-style: italic;
+	font-size: 12px; 
+
+}
+
+.header-links {
+	float: right;
+	display: block;
+	text-align: center;
+}
+.header-links li {
+	float:left;
+	padding: 5px 10px 7px 55px;
+	margin: -40px 5px 10px 0px;
+	border-left: 1.5px solid #E9E9E9;
+	
+}
+
+.header-links li a {
+	position: relative;
+	color: black;
+	font-weight: 350;
+	}
+
+.header-links a:after {
+	content:'';
+	background: transparent url(./images/nav-logos-2.png) no-repeat;
+	opacity: 0.8;
+	position: absolute;
+	top: 0px;
+	left: -34px;
+}
+
+.header-links .contact-us a:after {
+	background-position: 0px -1px;
+	width: 20px;
+	height: 18px;
+}
+
+.header-links .locations a:after {
+	background-position: -20px 0px;
+	width: 15px;
+	height: 20px;
+}
+
+.header-links .horaires a:after {
+	background-position: -37px 0px;
+	width: 22px;
+	height: 21px;
+}
+
+
+.header-links li a:hover {
+	color: #742BD5;
+	
+}
+
+
+.header-links li:hover {
+	background-color: transparent;
+}
+
+.hero {
+	margin-top: 70px;
+	/*background: #000 url(./images/mattjjb2.jpg) no-repeat 50% 50%;*/
+	background-size: cover;
+	text-align: center;
+	width: auto;
+	height: 90vh;
+}
+
+/*VIDEO BACKGROUND TEST CSS */
+
+.fullscreen-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -10000;
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+
+/*END TEST*/
+
+/*.hero .container {
+	background: #000 url(./images/mattjjb2.jpg) no-repeat;
+	background-size: cover;
+	text-align: center;
+	width: auto;
+	height: 90vh;
+}*/
+
+.hero h1 {
+
+	font-size: 82px;
+	color: white;
+	font-weight: bold;
+	margin: 0px 0 30px;
+	padding-top: 15px;
+	text-shadow: 3px 3px black;
+}
+
+.btn {
+	display: inline-block;
+	line-height: 50px;
+	border: 1px solid transparent;
+	margin: 110px 15px 0 0;
+	padding: 0 0px 0 15px;
+	border-radius: 10px;
+	color: white;
+	font-size: 18px;
+	font-weight: 750;
+	cursor: pointer;
+	transition: all 0.5s;
+	/*border: 1px solid grey;
+	width: 160px;
+	float: left;
+	padding: 15px;
+	margin-right: 15px;*/
+}
+
+.btn-violet {
+	background-color: #B3C4F3;
+	box-shadow: 2px 4px #89A1E3;
+
+}
+
+.btn-grey {
+	background-color: #FFBFBF;	
+	box-shadow: 2px 4px #FF8585;
+
+}
+
+.btn span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.btn span:after {
+	content: '>>';
+	position: relative;
+	opacity: 0;
+	top: 1px;
+	right: -40px;
+	transition: 0.5s;
+}
+.btn:hover span {
+	padding-right: 20px;
+}
+.btn:hover span:after {
+	opacity: 1;
+	right: -8px;
+}
+
+
+.main {
+	height: 400px;
+	border-top: 1px solid #B3C4F3;
+	border-bottom: 1px solid #B3C4F3;
+	margin: 20px 0px; 
+	overflow: auto; /*for resizing - this pushes down element but keeps it within container*/
+}
+
+.main .block {							/*ALL THE BLOCKS*/
+	display: inline-block;
+	border: 2px solid transparent;
+	border-radius: 15px;
+	margin: 200px -20px 0 110px;
+	min-width: 300px;
+	/*width: 24%;*/
+	width: 330px;
+	height: auto;
+	margin-top: 40px;
+	background-color: #E6E6E6;
+
+}
+
+.block .block-image { 					/*THIS IS THE ONLY FOR THE IMAGE IN THE BLOCKS*/
+	background: #fff url(images/workoutgirledit4.jpg) no-repeat;
+	background-size: cover;
+	margin: 15px;
+	height: 200px;
+	
+}
+
+.main .block .block-paragraph { 		/*PARAGRAPH IN BLOCKS*/
+	border-top: 1px solid #B3C4F3;
+	padding: 10px;
+	margin: 0 15px;
+}
+.footer {
+	position: relative;
+	border-top: 1px solid #B3C4F3;
+	height: 200px;
+	bottom: 0;
+	width: 100%;
+	background-color: black;
+	color: white;
+}	
+
+.footer-nav {
+	
+}
+.footer-nav .footer-column {
+	float:left;
+	margin-left: 40px;
+	margin-top: 40px;
+	padding-right: 35px;
+}
+.footer-column span {
+	font-weight: 400;
+	font-size: 20px;
+}
+
+.footer-nav a {
+	color: #8D8B8B;
+	font-size: 14px;
+
+}
