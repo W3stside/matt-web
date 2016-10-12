@@ -508,31 +508,29 @@ START OF CONTENT PAGES */
 	z-index: 6;
 }
 
-#btn-blue /*.btn-blue-div aka carousel*/ {
-	opacity: 0;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	/* Trying below width to disable display:none*/
-	width: 20px;
-}
 /*Fake div created to replace #btn-blue and expand*/
-.btn-fake-blue-div {
+#btn-blue {
 	position: absolute;
+	opacity: 1;
+	top: 0;
+	
+	/* Trying below width to disable display:none*/
 	width: 0.8em;
 	opacity: 0;
 	height: 64px;
 	padding: 0 0 0 0;
-	margin-top: -65px;
+	
 	overflow: hidden;
+	background-color: lightgrey;
+	margin-bottom: -30px;
 }
 
-.btn-fake-blue-div .container {
+.btn-blue-div .container {
  	background-color: lightgrey;
  	height: 100%;
  	width: 100%;
  	margin: 0 auto;
+ 	opacity: 0;
  }
 /*Copied from A-Propos etc*/
  #btn-blue-h1 {
@@ -586,7 +584,7 @@ START OF CONTENT PAGES */
 .carousel-inner > .item > a > img {
   display: block;
   max-width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .carousel {
@@ -595,6 +593,8 @@ START OF CONTENT PAGES */
 .carousel-inner {
   position: relative;
   width: 100%;
+  max-height: 100%;
+  margin-top: 9em;
   overflow: hidden;
 }
 .carousel-inner > .item {
@@ -772,17 +772,20 @@ START OF CONTENT PAGES */
   background-color: #fff;
 }
 .carousel-caption {
+  font-family: 'Amatic SC';
+  background-color: rgb(140, 81, 177);
+  opacity: 0.439;
   position: absolute;
-  right: 15%;
-  bottom: 20px;
-  left: 15%;
-  z-index: 10;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+  left: 48px;
+  top: 139px;
+  width: 203px;    
+  height: 101px;
 }
+
+.carousel-caption2{
+
+}
+
 .carousel-caption .btn {
   text-shadow: none;
 }
@@ -846,9 +849,6 @@ START OF CONTENT PAGES */
      }
  }
 /*Carousel END*/
-
-
-
 
 
 .a-propos-div {

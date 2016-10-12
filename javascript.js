@@ -145,20 +145,21 @@
 				marginLeft: ['-100%', 'swing']
 				}, 400, function() {
 				//Move fake div left to match .btn-blue location
-				$("#fake-div").animate({
-					left: '0',
-					top: '60.6%',
+				$("#btn-blue").animate({
+					left: '-1px',
+					top: '53.3%',
 					width: '9em'},0, function(){
 						//bring fake div to light
-						$("#fake-div").animate({opacity: '1'}, 1800, 'swing', function(){
-							$("#fake-div").animate({
-								top: '0', 
+						$("#btn-blue").animate({opacity: '1'}, 1800, 'swing', function(){
+							$("#btn-blue").animate({
+								top: '0',
+								left: '0', 
 								height: '100%', 
 								width: ['100%', 'swing'], 
 								right: '0'
 								}, 300, 'swing', function() {
 								$("#btn-blue"/*carousel*/).animate({width: '100%'}, 0, function() {
-									$("#btn-blue"/*carousel*/).animate({opacity: '1'}, 500);
+									$("#btn-blue-container"/*carousel*/).animate({opacity: '1'}, 500);
 								});
 							});
 						});
@@ -224,7 +225,7 @@
 
 
 		// Moving the H1 text in after the page animation finishes	
-		/*var aProposDivH1 = $("#btn-blue-h1");								
+		var aProposDivH1 = $("#btn-blue-h1");								
 		aProposDivH1.animate({fontSize: '1.8em'}, 300);
 		aProposDivH1.animate({color: 'white'}, 300);
 		aProposDivH1.animate({marginTop: '1em'}, 300);
@@ -240,10 +241,10 @@
 		var aProposMpParagraph = $(".mp-paragraph");
 		aProposDivContent.animate({opacity: '1'}, 1300);
 		aProposMpText.animate({left: '6em'}, 400);
-		aProposMpHeader.animate({left: '1em'}, 600);
+		aProposMpHeader.animate({top: '1.6em', left: '1em'}, 600);
 		aProposMpImg.animate({left: '55em'}, 800);
 		aProposMpParagraph.animate({left: '3em'}, 1000);
-		*/
+		
 		});	
 
 		});	
