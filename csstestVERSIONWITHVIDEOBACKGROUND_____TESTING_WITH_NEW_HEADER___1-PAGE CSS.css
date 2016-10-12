@@ -508,34 +508,33 @@ START OF CONTENT PAGES */
 	z-index: 6;
 }
 
-#btn-blue {
-	z-index: -5;
+#btn-blue /*.btn-blue-div aka carousel*/ {
 	opacity: 0;
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
+	/* Trying below width to disable display:none*/
+	width: 20px;
 }
-
+/*Fake div created to replace #btn-blue and expand*/
 .btn-fake-blue-div {
 	position: absolute;
-	top: 32.84em;
-	left: 38%;
 	width: 0.8em;
 	opacity: 0;
 	height: 64px;
 	padding: 0 0 0 0;
-	margin-bottom: -30px;
+	margin-top: -65px;
 	overflow: hidden;
 }
 
 .btn-fake-blue-div .container {
- 	background-color: #0B1C5C;
+ 	background-color: lightgrey;
  	height: 100%;
  	width: 100%;
  	margin: 0 auto;
  }
-
+/*Copied from A-Propos etc*/
  #btn-blue-h1 {
  	position: absolute;                  /*removing this, YOU CANNOT RUN THE MARGIN-TOP  BELOW*/
  	font-size: 1px;
@@ -888,13 +887,6 @@ START OF CONTENT PAGES */
  	opacity: 0;
  	text-align: left;
  	
- }
-
- .a-propos-p {
- 	position: relative;
- 	width: 100%;
- 	height: 100%;
- 	/*border: 1px solid red;*/
  }
 
 #moving-pages-content {
