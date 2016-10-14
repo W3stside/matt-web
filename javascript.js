@@ -32,59 +32,87 @@
 	//===============//
 
 	$(document).ready(function(){											//SEQUENTIAL PAGE INSERT//
-	$(".logo").click(function(){
+		$(".logo").click(function(){
 	/*var headerShine = $(".blog, .tarifs, .contact");
 	headerShine.animate({opacity: '0.3', height: '50px'}, 700);*/
 
-	//Assign .processing class to current page to DISABLE ability to continually click
-	var $this = $(".logo");
-	if ($this.hasClass('processing'))
-	return;	
-	$this.addClass('processing');
+		//Assign .processing class to current page to DISABLE ability to continually click
+		var $this = $(".logo");
+		if ($this.hasClass('processing'))
+		return;	
+		$this.addClass('processing');
 
-	$(".fullscreen-bg__video").css({display: 'initial'});
+		$(".fullscreen-bg__video").css({display: 'initial'});
+		//$("#btn-blue").animate({zIndex: '0s'},0);
+		$(".btn-blue").animate({opacity: '1', marginLeft: '0'}, 300);
+		$("#btn-blue-text").animate({opacity: '1'}, 300);
 
-	//Remove .processing class to allow user to click into other pages
-	var removeClasses = $(".tarifs, .blog, .what-we-do");
-	removeClasses.removeClass('processing');	
+		//Remove .processing class to allow user to click into other pages
+		var removeClasses = $(".tarifs, .blog, .what-we-do, .btn-blue");
+			removeClasses.removeClass('processing');	
 
-	//stop all animations on other pages when clicking on a page while another is loading. ex: hitting a propos and then clicking classes immediately	
-	var allStop = $(".what-we-do, .blog, .logo, .tarifs, .a-propos-div, .blog-div, .tarifs-div, #a-propos-h1, #blog-h1, #tarifs-h1, .mp-header, .mp-text, .mp-img");
-	allStop.stop(true);	
+		//stop all animations on other pages when clicking on a page while another is loading. ex: hitting a propos and then clicking classes immediately	
+		var allStop = $(".what-we-do, .blog, .logo, .tarifs, .a-propos-div, .blog-div, .tarifs-div, #a-propos-h1, #blog-h1, #tarifs-h1, .mp-header, .mp-text, .mp-img");
+			allStop.stop(true);	
 
-	//Returns color of Header Div LINKS <a> back to normal	
-	var removeHeaderColors = $(".tarifs a, .blog a, .what-we-do a");	
-	removeHeaderColors.animate({color: '#0B1C5C'}, 1000);
+		//Returns color of Header Div LINKS <a> back to normal	
+		var removeHeaderColors = $(".tarifs a, .blog a, .what-we-do a");	
+			removeHeaderColors.animate({color: '#0B1C5C'}, 1000);
 
-	//Returns color of other Header Divs back to normal
-	var removeHeaderBgColors = $(".tarifs, .blog, .what-we-do");
-	removeHeaderBgColors.animate({height: '5px', backgroundColor: 'black'}, 1000);	
+		//Returns color of other Header Divs back to normal
+		var removeHeaderBgColors = $(".tarifs, .blog, .what-we-do");
+			removeHeaderBgColors.animate({height: '5px', backgroundColor: 'black'}, 1000);	
 
-	var titleHide = $("#tarifs-h1, #blog-h1, #a-propos-h1, .mp-header, .mp-text, .mp-img");	
-	titleHide.animate({opacity: '0'}, 300);
-	titleHide.animate({left: "-100em"}, 100);
+		//Hides headers and titiles of other pages (expect carousel)
+		var titleHide = $("#tarifs-h1, #blog-h1, #a-propos-h1, .mp-header, .mp-text, .mp-img");	
+			titleHide.animate({opacity: '0'}, 300);
+			titleHide.animate({left: "-100em"}, 100);
 
-	var classesHide = $(".tarifs-div");								//JS for hiding transition for the Classes or COURS page
-	classesHide.animate ({width: '25px', left: '82%'/*left: '1150px'*/},700);
-	classesHide.animate ({opacity: '0', height: '0'},500);	
+		//Hides carousel page text and opacques page + sets zIndex of page to be lower than hero
+		var carouselHide = $(".btn-blue-div");
+		var carouselCaptions = $(".carousel-caption, .carousel-caption2");
+			$("#btn-blue-container").animate({opacity: '0'}, 300);
+			carouselCaptions.animate({left: "-100em"}, 500, function(){
+				carouselHide.animate({width: '9em', left: '-1px', top: '53.3%', height: '64px'},800, function() {
+					$(".btn-blue-div").animate({opacity: '0'}, 5500);
+					$(".btn-blue-div").animate({zIndex: '-5'}, 800);
 
-	var blogHide = $(".blog-div");
-	blogHide.animate ({width: '25px', left: '91.2%'/*left: '1250px'*/},700);			// JS for hiding transition for the BLOG page
-	blogHide.animate ({opacity: '0', height: '0'},500);		
+			});
+		});
 
-	var aproposHide = $(".a-propos-div");
-	aproposHide.animate ({width: '25px', left: '73.5%'/*left: '1000px'*/},700);
-	aproposHide.animate ({opacity: '0', height: '0'},500);		
 
-	var aProposDiv = $(".hero");								//JS for animating the page called
-	aProposDiv.animate({opacity: '1'}, 2000);
-	aProposDiv.animate({height: '100vh'},800);
-	//aProposDiv.animate({left: '0'}, 500);
-	aProposDiv.animate({width: '100%'}, 500);  					//MAKES THE A PROPOS CONTAINER EXPAND//
-	//aProposDiv.animate({opacity: '1'}, 500)						
-	});	
 
-	});
+		//JS for hiding transition for the Classes or COURS page	
+		//var classesHide = $(".tarifs-div");								
+		//classesHide.animate ({width: '25px', left: '82%'/*left: '1150px'*/},700);
+		//classesHide.animate ({opacity: '0', height: '0'},500);	
+
+
+		var classesHide = $(".tarifs-div");								//JS for hiding transition for the Classes or COURS page
+			classesHide.animate ({width: '25px', left: '82%'/*left: '1150px'*/},700);
+			classesHide.animate ({opacity: '0', height: '0'},500);	
+
+		var blogHide = $(".blog-div");
+			blogHide.animate ({width: '25px', left: '91.2%'/*left: '1250px'*/},700);			// JS for hiding transition for the BLOG page
+			blogHide.animate ({opacity: '0', height: '0'},500);		
+
+		var aproposHide = $(".a-propos-div");
+			aproposHide.animate ({width: '25px', left: '73.5%'/*left: '1000px'*/},700);
+			aproposHide.animate ({opacity: '0', height: '0'},500);		
+
+		
+		//var heroReveal = $(".hero-text");
+		//	heroReveal.animate({opacity: '1'});	
+
+		var aProposDiv = $(".hero");								//JS for animating the page called
+			aProposDiv.animate({opacity: '1'}, 2000);
+			aProposDiv.animate({height: '100vh'},800);
+			//aProposDiv.animate({left: '0'}, 500);
+			aProposDiv.animate({width: '100%'}, 500);  					//MAKES THE A PROPOS CONTAINER EXPAND//
+			//aProposDiv.animate({opacity: '1'}, 500)						
+			});	
+
+	}); //END FUNCTION
 
 	
 	//Calling in the animateRotate js//
@@ -133,7 +161,7 @@
 
 		//Opaques the layer being replaced to allow animation to transition smoothly	
 		//Changed this to .hero-text to allow the button to stay when others are opacqued
-		var heroHide2 = $(".hero-text");											
+		var heroHide2 = $(".hero");											
 		heroHide2.animate({opacity: '0'}, 800);
 		//This is to fade the Button TExt slower and make it le sexy
 		$("#btn-blue-text").animate({opacity: '0'}, 1200);
@@ -148,9 +176,10 @@
 				$("#btn-blue").animate({
 					left: '-1px',
 					top: '53.3%',
-					width: '9em'},0, function(){
+					width: '9em'}, 0, function(){
 						//bring fake div to light
 						$("#btn-blue").animate({opacity: '1'}, 1800, 'swing', function(){
+						//Exoands #btn-blue div to fit screen w/swing animation	
 							$("#btn-blue").animate({
 								top: '0',
 								left: '0', 
@@ -160,9 +189,15 @@
 								}, 300, 'swing', function() {
 								$("#btn-blue"/*carousel*/).animate({width: '100%'}, 0, function() {
 									$("#btn-blue-container"/*carousel*/).animate({opacity: '1'}, 500);
+									$(".carousel-caption").animate({left:'5.7em', opacity: '1', fontSize: ['1.4em', 'swing']}, 600, function(){
+										$(".carousel-caption").animate({height: ['100%' , 'swing']}, 600);
+									});
+									$(".carousel-caption2").animate({left: '0em', opacity: '1'}, 500, function(){
+										$(".carousel-caption2").animate({fontSize: ['3em', 'swing']}, 800);
+									});
+										});
+									});
 								});
-							});
-						});
 						//fade out THE BUTTON / THE ACTUAL BUTTON ON THE FRONT PAGE
 						$(".btn-blue"/*front page button*/).animate({opacity: '0'}, 1000);
 					});
@@ -223,31 +258,9 @@
 
 		//Rotating the content in btn-blue-div
 
-
-		// Moving the H1 text in after the page animation finishes	
-		var aProposDivH1 = $("#btn-blue-h1");								
-		aProposDivH1.animate({fontSize: '1.8em'}, 300);
-		aProposDivH1.animate({color: 'white'}, 300);
-		aProposDivH1.animate({marginTop: '1em'}, 300);
-		aProposDivH1.animate({left: '4.5em'}, 300);
-		aProposDivH1.animate({opacity: '1'}, 1500);
-		zIndexPages.animate({zIndex: '6'},0);
-
-
-		var aProposDivContent = $(".mp-text, .mp-header, .mp-img");
-		var aProposMpText = $(".mp-text");
-		var aProposMpHeader = $(".mp-header");
-		var aProposMpImg = $(".mp-img");
-		var aProposMpParagraph = $(".mp-paragraph");
-		aProposDivContent.animate({opacity: '1'}, 1300);
-		aProposMpText.animate({left: '6em'}, 400);
-		aProposMpHeader.animate({top: '1.6em', left: '1em'}, 600);
-		aProposMpImg.animate({left: '55em'}, 800);
-		aProposMpParagraph.animate({left: '3em'}, 1000);
 		
 		});	
-
-		});	
+	});	
 
 	//A PROPOS SCRIPT//
 	//===============//
@@ -286,6 +299,13 @@
 			$(".fullscreen-bg__video").css({display: 'none'});
 		});
 
+	$(".carousel-caption").animate({height: ['0','swing']}, 600, function(){
+		$(".carousel-caption2").animate({height: ['0','swing']}, 600, function(){
+			$(".carousel-inner img").animate({opacity: ['0','swing']}, 700, function(){
+				$("#btn-blue").animate({top: '0', width: '0.8em', height: '64px'});
+			});
+		});
+	});
 
 	var titleHide = $("#tarifs-h1, #blog-h1, .mp-header, .mp-text, .mp-img");	
 	titleHide.animate({opacity: '0'}, 300);
