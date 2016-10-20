@@ -216,7 +216,7 @@
 											$(".carousel-caption").animate({height: ['100%' , 'swing']}, 900);
 											$(".carousel-caption h3").animate({opacity: '1'}, 1000);
 										});
-										$(".carousel-caption2").animate({left: '47vw', top: '20px', bottom: '23%', minWidth: '45vw', opacity: '1'}, 500, function(){
+										$(".carousel-caption2").animate({left: '47vw', top: '0', bottom: '0', minWidth: '45vw', opacity: '1'}, 500, function(){
 											$(".carousel-caption2").animate({fontSize: ['2.625em', 'swing']}, 800);
 										});
 									});
@@ -237,9 +237,11 @@
 
 			$('.carousel-caption2').on('mouseover', function(){
 			  $(this).siblings('.carousel-caption').addClass('text_shadow');
+			  $(this).children('.cc-title').animate({fontWeight: '900', fontSize: '1.2em', letterSpacing: '5px'}, 700);
 			  
 			}).on('mouseout', function(){
 			  $(this).siblings('.carousel-caption').removeClass('text_shadow');
+			  $(this).children('.cc-title').animate({fontWeight: '0', fontSize: '1em', letterSpacing: '0px'}, 700);
 			})
 
 

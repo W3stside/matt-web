@@ -1471,10 +1471,14 @@ START OF CONTENT PAGES */
   margin: 0;
   background-color: #fff;
 }
+
+.carousel-caption2 h3 {
+  margin-top: 10px;
+}
+
 .carousel-caption {
   font-family: 'Amatic SC';
-  /*background-color: rgba(140, 81, 177, 0.439);*/
-  background-color: rgba(0,0,0,0.439);
+  background-color: rgba(140, 81, 177, 0.439);
   position: absolute;
   left: 5.7em;
   top: 0em;
@@ -1482,13 +1486,23 @@ START OF CONTENT PAGES */
   height: 7%;
   font-size: 2.4em; /*should be 1.4em*/
   font-weight: 900;
-  /*text-shadow: 0px 0px 20px black;*/
+  text-shadow: 0px 0px 20px black;
+  /*setting transition speed for JS text shadow below*/
+  -webkit-transition: text-shadow 1.5s ease-in-out;
+  -moz-transition: text-shadow 1.5s ease-in-out;
+  -o-transition: text-shadow 1.5s ease-in-out;
+  transition: text-shadow 1.5s ease-in-out;
+  /*Setting it for the background-color below*/
+  -webkit-transition: background-color 0.7s ease-in-out;
+  -moz-transition: background-color 0.7s ease-in-out;
+  -o-transition: background-color 0.7s ease-in-out;
+  transition: background-color 0.7s ease-in-out;
 }
 
 .carousel-caption2 {
 	font-family: 'Amatic SC';
-    /*background-color: rgba(140, 81, 177, 0.439);*/
-    background-color: rgba(0,0,0,0.439);
+    background-color: rgba(140, 81, 177, 0.439);
+    /*background-color: rgba(0,0,0,0.439);*/
     position: absolute;
     width: 13em;
     overflow: auto;
@@ -1498,6 +1512,11 @@ START OF CONTENT PAGES */
     margin-right: 1.2em;
     color: rgba(255,255,255,1);
     font-size: 0.0001em; /*should be 3em*/
+    /*setting transiton times for when hovered below*/
+    -webkit-transition: background-color 0.7s ease-in-out;
+    -moz-transition: background-color 0.7s ease-in-out;
+    -o-transition: background-color 0.7s ease-in-out;
+    transition: background-color 0.7s ease-in-out;
 }
 
 .carousel-caption2 ul {
@@ -1508,11 +1527,19 @@ START OF CONTENT PAGES */
   line-height: 56px;
 }
 
-.is-hover {
-  -webkit-filter: blur(15px) brightness(0.1);
-  filter: blur(15px) brightness(0.1);
+.toblur{
   -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out 0.3s;
+}
+
+.is-hover {
+  -webkit-filter: blur(5px) brightness(0.7);
+  -o-filter: blur(5px) brightness(0.7);
+  -moz-filter: blur(5px) brightness(0.7);
+  filter: blur(5px) brightness(0.7);
+  
 }
 
 .carousel-caption2:hover li {
@@ -1520,10 +1547,31 @@ START OF CONTENT PAGES */
   text-shadow: 0px 0px 20px black;
 }
 
+.carousel-caption2:hover {
+  background-color: rgba(0,0,0,0.439);
+}
+.cc-title {
+  /*letter spacing transition time*/
+  -webkit-transition: letter-spacing 1.5s ease-in-out;
+  -moz-transition: letter-spacing 1.5s ease-in-out;
+  -o-transition: letter-spacing 1.5s ease-in-out;
+  transition: letter-spacing 1.5s ease-in-out;
+
+  -webkit-transition: text-shadow 1.5s ease-in-out;
+  -moz-transition: text-shadow 1.5s ease-in-out;
+  -o-transition: text-shadow 1.5s ease-in-out;
+  transition: text-shadow 1.5s ease-in-out;
+
+}
+
+.carousel-caption2:hover .cc-title {
+  text-shadow: 0px 0px 20px violet;
+  
+}
+
 .text_shadow {
-  text-shadow: 0px 0px 20px red;
-  -webkit-transition: all 2s ease-in-out;
-  transition: all 2s ease-in-out;
+  text-shadow: 0px 0px 20px violet;
+  background-color: rgba(0,0,0,0.439);
 }
 
 #stick-figure-core {
