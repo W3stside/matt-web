@@ -185,45 +185,47 @@
 			//Opaques the layer being replaced to allow animation to transition smoothly	
 			//Changed this to .hero-text to allow the button to stay when others are opacqued
 			var heroHide2 = $(".hero");											
-			heroHide2.animate({opacity: '0'}, 800);
+			heroHide2.animate({opacity: '0'}, 1800);
 			//This is to fade the Button TExt slower and make it le sexy
 			$("#btn-blue-text").animate({opacity: '0'}, 1200);
 
 			//opaque button blue to 0.3
 			$(".btn-blue" /*front page button*/).animate({opacity: '0.3'}, 500, function(){
 				//move button blue to the left 100 percent
-				$(".btn-blue"/*front page button*/).animate({
-					marginLeft: ['-100%', 'swing']
+				$(this).animate({
+					opacity: ['0.3', 'swing']
 					}, 400, function() {
 					//Move fake div left to match .btn-blue location
 					$("#btn-blue").animate({
-						left: '-1px',
-						top: '53.3%',
-						width: '9em'}, 0, function(){
+						left: '47.3vw',
+						top: '52vh',
+						width: '1em'}, 0, function(){
 							//bring fake div to light
-							$("#btn-blue").animate({opacity: '1'}, 1800, 'swing', function(){
+							$(this).animate({opacity: '1'}, 800, 'swing', function(){
 							//Exoands #btn-blue div to fit screen w/swing animation	
-								$("#btn-blue").animate({
+								$(this).animate({
 									top: '0',
-									left: '0', 
+									//left: '0', 
 									height: '100%', 
-									width: ['100%', 'swing'], 
-									right: '0'
+									//width: ['100%', 'swing'], 
+									//right: '0'
 									}, 300, 'swing', function() {
-									$("#btn-blue"/*carousel*/).animate({width: '100%'}, 0, function() {
-										$("#btn-blue-container"/*carousel*/).animate({opacity: '1'}, 500);
-										$(".carousel-caption").animate({left:'11%'/*was 5.7em*/, opacity: '1'}, 600, function(){
-											$(".carousel-caption").animate({height: ['100%' , 'swing']}, 900);
-											$(".carousel-caption h3").animate({opacity: '1'}, 1000);
-										});
-										$(".carousel-caption2").animate({left: '47vw', top: '0', bottom: '0', minWidth: '45vw', opacity: '1'}, 500, function(){
-											$(".carousel-caption2").animate({fontSize: ['2.625em', 'swing']}, 800);
-										});
+									$(this/*carousel*/).animate({left: '0'/*,width: '100%'*/}, 500, function() {
+										$(this/*carousel*/).animate({width: '100%'}, 300, function(){
+											$("#btn-blue-container"/*carousel*/).animate({opacity: ['1', 'swing']}, 1000, function(){
+												$(".carousel-caption").animate({left:'9vw'/*was 5.7em*/, opacity: '1'}, 400, function(){
+													$(".carousel-caption").animate({height: ['100%' , 'swing']}, 700);
+													$(".carousel-caption h3").animate({opacity: '1'}, 800);
+												});
+												$(".carousel-caption2").animate({left: '47vw', top: '0', bottom: '0', minWidth: '45vw', opacity: '1'}, 400, function(){
+													$(".carousel-caption2").animate({fontSize: ['3.5vw', 'swing']}, 600);
+												});
+											});
+										});										
 									});
 								});
 							});
-							//fade out THE BUTTON / THE ACTUAL BUTTON ON THE FRONT PAGE
-							$(".btn-blue"/*front page button*/).animate({opacity: '0'}, 1000);
+							
 						});
 					});	
 				});
@@ -239,9 +241,10 @@
 			  $(this).siblings('.carousel-caption').addClass('text_shadow');
 			  $(this).children('.cc-title').animate({fontWeight: '900', fontSize: '1.2em', letterSpacing: '5px'}, 700);
 			  
+			  
 			}).on('mouseout', function(){
 			  $(this).siblings('.carousel-caption').removeClass('text_shadow');
-			  $(this).children('.cc-title').animate({fontWeight: '0', fontSize: '1em', letterSpacing: '0px'}, 700);
+			  $(this).children('.cc-title').animate({fontWeight: '0', fontSize: '1em', letterSpacing: '0px'}, 700).stop(true,false,false);
 			})
 
 
