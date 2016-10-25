@@ -928,31 +928,39 @@ html body {
 }
 
 .header-links-container:hover .what-we-do a {
-    -webkit-transition: color 1.2s 0.1s ease-in-out;
-    -moz-transition: color 1.2s 0.1s ease-in-out;
-    -o-transition: color 1.2s 0.1s ease-in-out;
-    transition: color 1.2s 0.1s ease-in-out;
+    -webkit-transition: color 0.6s 0.1s ease-in-out;
+    -moz-transition: color 0.6s 0.1s ease-in-out;
+    -o-transition: color 0.6s 0.1s ease-in-out;
+    transition: color 0.6s 0.1s ease-in-out;
     color: rgb(245,245,245) !important;
 }
 
 .header-links-container:hover .tarifs a {
-    -webkit-transition: color 1.2s 0.2s ease-in-out;
-    -moz-transition: color 1.2s 0.2s ease-in-out;
-    -o-transition: color 1.2s 0.2s ease-in-out;
-    transition: color 1.2s 0.2s ease-in-out;
+    -webkit-transition: color 0.6s 0.2s ease-in-out;
+    -moz-transition: color 0.6s 0.2s ease-in-out;
+    -o-transition: color 0.6s 0.2s ease-in-out;
+    transition: color 0.6s 0.2s ease-in-out;
     color: rgb(245,245,245) !important;
 }
 
 .header-links-container:hover .blog a {
-    -webkit-transition: color 0.2s 0.3s ease-out;
-    -moz-transition: color 1.2s 0.3s ease-in-out;
-    -o-transition: color 1.2s 0.3s ease-in-out;
-    transition: color 1.2s 0.3s ease-in-out;
+    -webkit-transition: color 0.6s 0.3s ease-out;
+    -moz-transition: color 0.6s 0.3s ease-in-out;
+    -o-transition: color 0.6s 0.3s ease-in-out;
+    transition: color 0.6s 0.3s ease-in-out;
     color: rgb(245,245,245) !important;
 }
 
-.header-links-container div:hover {
-	background-color: #0B1C5C !important;
+#what-we-do-header-div:hover {
+	background-color: #9B78C8 !important;
+}
+
+#tarifs-header-div:hover {
+  background-color: #77DD77 !important;
+}
+
+#blog-header-div:hover {
+  background-color: #E79A8E !important;
 }
 
 /* END HEADER CODE
@@ -966,10 +974,10 @@ html body {
 	background-size: cover;
 	text-align: center; 		/*NECESSARY TO SET CHILD ELEMENTS CENTERED*/
 	width: auto;
-	/*min-height: 55em; */
+	min-height: 55em; 
 	/*max-height: 95vh;*/
 	min-width: 1280px;
-	min-height: 100vh;
+  height: 100vh;
 	}
 
 .hero {
@@ -1030,7 +1038,7 @@ html body {
 	height: 100%;
 	width: 100%;
 	top: 0;
-    left: 0;
+  left: 0;
 	opacity: 0.2;
 	z-index: -10;
 	}
@@ -1083,26 +1091,27 @@ html body {
 	border: 1px solid transparent;
 	margin: 110px 15px 0 0;
 	padding: 5px 0px 5px 25px;
-	color: rgb(235,235,235);
+	color: #000;
 	font-size: 22px;
 	font-weight: bold;
 	cursor: pointer;
-	transition: all 0.5s;
+	transition: all 0.3s;
 }
 
 .btn-blue {
-	background-color: black;
+	background-color: white;
 }
 
 .btn:hover {
 	background-color: #0B1C5C;
+  color: white;
 }
 
 .btn span {
 	cursor: pointer;
 	display: inline-block;
 	position: relative;
-	transition: 0.5s;
+	transition: 0.3s;
 }
 
 .btn span:after {
@@ -1111,7 +1120,7 @@ html body {
 	opacity: 0;
 	top: -1px;
 	right: -40px;
-	transition: 0.5s;
+	transition: 0s;
 	font-size: 14px;
 }
 .btn:hover span {
@@ -1125,77 +1134,15 @@ html body {
 
 /* END HERO CODE
 ===================				EDITED OUT 26/09
- START OF MAIN CODE
-
-
-.main {
-	height: 400px;
-	text-align: center;
-	background-color: rgba(255,255,255, 0.6);
-	border-top: 3px solid #B3C4F3;
-	border-bottom: 3px solid #B3C4F3;
-	margin: 20px 0px; 
-	
-	min-width: 1280px; /*for resizing - this pushes down element but keeps it within container*/
-}
-
-
-/*.main .block {							
-	display: inline-block;
-	margin: 40px 20px 0 20px;
-	border: 2px solid transparent;
-	min-width: 300px;
-	width: 330px;
-	height: auto;
-	background-color: #E6E6E6;
-	box-shadow: 5px 5px rgba(0,0,0,0.2);
-
-}
-
-.block-image {
-	margin: 15px;
-	height: 200px;
-}
-
-.workoutgirl1 { 					/*THIS IS THE ONLY FOR THE IMAGE IN THE BLOCKS
-	background: #fff url(images/workoutgirledit4.jpg) no-repeat;
-	background-size: cover;
-	
-}
-
-.workoutgirl2 { 					/*THIS IS THE ONLY FOR THE IMAGE IN THE BLOCKS
-	background: #fff url(images/workoutgirlEDIT2.jpg) no-repeat;
-	background-size: cover;
-}
-
-.workoutgirl3 { 					/*THIS IS THE ONLY FOR THE IMAGE IN THE BLOCKS
-	background: #fff url(images/mattjjb2.jpg) no-repeat;
-	background-size: cover;
-}
-
-.main .block .block-paragraph { 		/*PARAGRAPH IN BLOCKS
-	border-top: 1px solid #B3C4F3;
-	font-size: 13px;
-	font-family: 'PT Serif', Helvetica, Arial;
-	text-align: left;
-	padding: 10px;
-	margin: 0 15px;
-}
-
-.block-paragraph img {
-	float: left;
-	margin: 5px 12px 15px -10px;
-}
-
-/* END MAIN BLOCK(S) CODE
+ 
 ===================
 START OF CONTENT PAGES */
 
 .moving-pages {
-	display: block;
+	/*display: block;
 	overflow: hidden;
-	min-height: 13em;
-	height: 100%
+	min-height: 25em;
+	height: 100%*/
 }
 
 #a-propos, #tarifs, #blog, #btn-blue {
@@ -1205,8 +1152,8 @@ START OF CONTENT PAGES */
 /*Fake div created to replace #btn-blue and expand*/
 #btn-blue {
 	position: absolute;
-	opacity: 1;
 	top: 0;
+  left: 50%;
 	/* Trying below width to disable display:none*/
 	width: 0.8em;
 	opacity: 0;
@@ -1282,6 +1229,9 @@ START OF CONTENT PAGES */
 
 .carousel {
   position: relative;
+  min-height: 55em;
+  height: 100vh;
+  background-color: black;
 }
 .carousel-inner {
   position: relative;
@@ -1468,7 +1418,8 @@ START OF CONTENT PAGES */
 }
 
 .carousel-caption2 h3 {
-  margin-top: 1vh;
+  margin-top: 2.5vh;
+  text-decoration: underline;
 }
 
 .carousel-caption {
@@ -1482,7 +1433,7 @@ START OF CONTENT PAGES */
   height: 7%;
   font-size: 2.4em; /*should be 1.4em*/
   font-weight: 900;
-  text-shadow: 0px 0px 20px black;
+  text-shadow: 0px 0px 12px black;
   /*setting transition speed for JS text shadow below*/
   -webkit-transition: text-shadow 1.5s ease-in-out;
   -moz-transition: text-shadow 1.5s ease-in-out;
@@ -1500,22 +1451,33 @@ START OF CONTENT PAGES */
     background-color: rgba(140, 81, 177, 0.439);
     position: absolute;
     width: 13em;
+    min-width: 45vw;
     overflow: auto;
     margin-right: 1.2em;
     color: rgba(255,255,255,1);
-    font-size: 0.0001em; /*should be 3em*/
-
+    font-size: 3.5vw; /*should be 3em*/
+    opacity: 0;
+    left: 47vw; 
+    top: 0;
+    bottom: 0; 
+    
     /*setting transiton times for when hovered below*/
     -webkit-transition: background-color 0.7s ease-in-out;
     -moz-transition: background-color 0.7s ease-in-out;
     -o-transition: background-color 0.7s ease-in-out;
     transition: background-color 0.7s ease-in-out;
 }
+
+.cc2-content {
+  opacity: 0;
+}
+
 .cc-intro {
-  font-size: 95%;
+  font-size: 2.4vw;
   margin-top: 0.2em;
   padding: 0 0.2em;
-  text-shadow: 0 0 20px white;
+  text-shadow: 0 0 12px white;
+  opacity: 0;
 }
 
 .carousel-caption2 ul {
@@ -1524,6 +1486,7 @@ START OF CONTENT PAGES */
   text-align: left;
   padding: 20px;
   line-height: 1em;
+  margin-top: -3vh;
 }
 
 .carousel-caption2 li {
@@ -1534,7 +1497,7 @@ START OF CONTENT PAGES */
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
 .is-hover {
@@ -1547,7 +1510,7 @@ START OF CONTENT PAGES */
 
 .carousel-caption2:hover li {
   font-weight: 900;
-  text-shadow: 0px 0px 20px black;
+  text-shadow: 0px 0px 12px black;
 }
 
 .carousel-caption2:hover {
@@ -1568,12 +1531,11 @@ START OF CONTENT PAGES */
 }
 
 .carousel-caption2:hover .cc-title {
-  text-shadow: 0px 0px 30px violet;
-  
+  text-shadow: 0px 0px 12px violet;
 }
 
 .text_shadow {
-  text-shadow: 0px 0px 20px violet;
+  text-shadow: 0px 0px 12px violet;
   background-color: rgba(0,0,0,0.439);
 }
 
@@ -1625,7 +1587,7 @@ START OF CONTENT PAGES */
 
  .carousel-caption h3 {
      color: rgba(255,255,255,1) !important;
-     font-size: 1.8em;
+     font-size: 5.4vw;
      opacity: 0;
  }
 
@@ -1638,7 +1600,7 @@ START OF CONTENT PAGES */
  }
 
  @media (max-width: 600px) {
-     .carousel-caption {
+     .carousel-caption-VOID {
          display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
      }
  }
@@ -1734,9 +1696,9 @@ START OF CONTENT PAGES */
     
 	}
 
-.mp-img, .mp-header, .mp-text, .carousel-caption, .carousel-caption2 {	/*to set the images outside of the screen when jQuering them in*/
+.mp-img, .mp-header, .mp-text, .carousel-caption {	/*to set the images outside of the screen when jQuering them in*/
 	opacity: 0;
-	left: -100em;
+	left: -9999px;
 }
 
 /*JJB SPECIFICALLY*/
@@ -1764,9 +1726,8 @@ START OF CONTENT PAGES */
 
 #ryu {
 	position: absolute;
-    top: 4em;
-    /*left: 55em;*/
-    width: 36em;
+    top: 2em;  /* changed from 4em*/
+    width: 62vw; /* changed from 36em*/
     opacity: 1;
 }
 

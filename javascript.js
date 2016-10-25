@@ -24,13 +24,18 @@
 	window.location.hash = hash;
 	});
 	} // End if
-	});
+		});
 	});
 	
-
-
-	
-
+	//Variable names
+	var heroDiv = $(".hero");
+	var homeButton = $(".btn-blue");
+	var hbText = $("#btn-blue-text");
+	var carouselHide = $(".btn-blue-div");
+	var carouselCont = $("#btn-blue-container");
+	var carouselCaptions = $(".carousel-caption, .carousel-caption2");
+	var ccOne = $(".carousel-caption");
+	var ccTwo = $(".carousel-caption2");
 
 	//HOME SCRIPT//
 	//===============//
@@ -45,16 +50,6 @@
 				return;	
 			$this.addClass('processing');
 
-			//Variable names
-			var heroDiv = $(".hero");
-			var homeButton = $(".btn-blue");
-			var hbText = $("#btn-blue-text");
-			var carouselHide = $(".btn-blue-div");
-			var carouselCont = $("#btn-blue-container");
-			var carouselCaptions = $(".carousel-caption, .carousel-caption2");
-			var ccOne = $(".carousel-caption");
-			var ccTwo = $(".carousel-caption2");
-
 			$(".fullscreen-bg__video").css({display: 'initial'});
 			//$("#btn-blue").animate({zIndex: '0s'},0);
 			
@@ -63,7 +58,7 @@
 				removeClasses.removeClass('processing');	
 
 			//stop all animations on other pages when clicking on a page while another is loading. ex: hitting a propos and then clicking classes immediately	
-			var allStop = $(".btn-blue, .what-we-do, .blog, .logo, .tarifs, .a-propos-div, .blog-div, .tarifs-div, #a-propos-h1, #blog-h1, #tarifs-h1, .mp-header, .mp-text, .mp-img");
+			var allStop = $("#btn-blue, #btn-blue-container, .carousel-caption, .carousel-caption2, .cc-intro, .cc-title, .cc2-content, .carousel-caption h3, .btn-blue, .what-we-do, .blog, .logo, .tarifs, .a-propos-div, .blog-div, .tarifs-div, #a-propos-h1, #blog-h1, #tarifs-h1, .mp-header, .mp-text, .mp-img");
 				allStop.stop(true);	
 
 			//Returns color of Header Div LINKS <a> back to normal	
@@ -75,48 +70,25 @@
 				removeHeaderBgColors.animate({height: '5px', backgroundColor: 'black'}, 1000);	
 
 			//Hides headers and titiles of other pages (expect carousel)
-			var titleHide = $("#tarifs-h1, #blog-h1, #a-propos-h1, .mp-header, .mp-text, .mp-img");	
+			var titleHide = $("#tarifs-h1, #blog-h1, #a-propos-h1, .mp-header, .mp-text, .mp-img, .carousel-caption");	
 				titleHide.animate({opacity: '0'}, 300);
-				titleHide.animate({left: "-100em"}, 100);
+				titleHide.animate({left: "-1000em"}, 100);
 
 			//Hides carousel page text and opacques page + sets zIndex of page to be lower than hero
-			
-
-			carouselCaptions.animate({left: "-100em"}, 1000, function(){
-				carouselCont.animate({opacity: '0'}, 1000, function(){
-					carouselHide.animate({width: '18.75em', left: '38.28vw', top: '51.5%', height: '64px'},1000, function() {
-						carouselHide.animate({opacity: '0'}, 1000);
-						carouselHide.animate({zIndex: '-5'}, 0, function(){
-							//	heroDiv.animate({opacity: '0'},0);
-							homeButton.animate({marginLeft: '0'},0);
-							homeButton.animate({opacity: '1', }, 300);
-							hbText.animate({opacity: '1'}, 500, function(){
-								/*//JS for animating the page called
-								//$(".hero-text").animate({opacity: '1'},500);
-								heroDiv.animate({opacity: '1'}, 500);
-								heroDiv.animate({height: '100vh'},800);
-								//MAKES THE A PROPOS CONTAINER EXPAND//
-								heroDiv.animate({width: '100%'}, 500); 		*/
-							});		
-						});
-					});
-				});				
-			});
+			ccTwo.animate({opacity: '0'}, 700);
+			carouselHide.animate({zIndex: '-50'}, 0);
+			ccOne.animate({left: '-1000em'}, 700, function(){
+				ccOne.animate({height: '7%'}, 100);
+				carouselHide.animate({opacity: '0'}, 700, function(){
+					$("#btn-blue-text, .btn-blue").animate({opacity: '1'}, 500);
+					carouselHide.animate({width: '0.8em', height: '64px', top: '0', left: '50%'}, 0);
+					carouselCont.animate({opacity: '0'}, 0);
+				});
+			});	
 			
 			var classesHide = $(".tarifs-div");								//JS for hiding transition for the Classes or COURS page
 				classesHide.animate ({width: '25px', left: '82%'/*left: '1150px'*/},700);
 				classesHide.animate ({opacity: '0', height: '0'},500, function(){
-					/*//heroDiv.animate({opacity: '0'},0);
-					homeButton.animate({marginLeft: '0'},0);
-					homeButton.animate({opacity: '1', }, 300);
-					hbText.animate({opacity: '1'}, 500, function(){
-						//JS for animating the page called
-						//$(".hero-text").animate({opacity: '1'},500);
-						heroDiv.animate({opacity: '1'}, 1000);
-						//heroDiv.animate({height: '100vh'},800);
-						//MAKES THE A PROPOS CONTAINER EXPAND//
-						//heroDiv.animate({width: '100%'}, 500); 		
-					});*/
 				});	
 
 			var blogHide = $(".blog-div");
@@ -128,10 +100,7 @@
 				aproposHide.animate ({opacity: '0', height: '0'},500);	
 
 			heroDiv.animate({opacity: '1'}, 2500);
-			heroDiv.animate({height: '100vh'},2500);
-			//MAKES THE A PROPOS CONTAINER EXPAND//
-			heroDiv.animate({width: '100%'}, 2500);	
-
+		
 		});		
 	}); 
 
@@ -161,9 +130,9 @@
 
 	$(document).ready(function(){		//SEQUENTIAL PAGE INSERT//
 		$(".btn-blue").click(function(){
-			$("#btn-blue").css({display: 'initial'}, 0, function(){
-				$("#btn-blue").animate({zIndex: '1'},0);
-			});
+			//$("#btn-blue").css({display: 'initial'}, 0, function(){
+			$("#btn-blue").animate({zIndex: '6'},0);
+			//});
 			//Assign .processing class to current page to DISABLE ability to continually click
 			var $this = $(".btn-blue");
 			if ($this.hasClass('processing'))
@@ -175,27 +144,27 @@
 			removeClasses.removeClass('processing');
 
 			//Sets Z-Index of previous Pages lower to allow "animation" to appear on top	
-			var zIndexPages = $("#what-we-do, #tarifs, #blog");								
+			var zIndexPages = $("#what-we-do, #tarifs, #blog, .hero");								
 			zIndexPages.animate({zIndex: '5'},0);
 
 			//stop all animations on other pages when clicking on a page while another is loading. ex: hitting a propos and then clicking classes immediately	
-			var allStop = $(".what-we-do, .tarifs, .blog, .logo, .a-propos-div, .tarifs-div, .blog-div, .hero, #a-propos-h1, #tarifs-h1, #blog-h1, .mp-header, .mp-text, .mp-img");
+			var allStop = $(".what-we-do, .tarifs, .blog, .logo, .a-propos-div, .tarifs-div, .blog-div, .hero, .hero-wrapper, #a-propos-h1, #tarifs-h1, #blog-h1, .mp-header, .mp-text, .mp-img");
 			allStop.stop(true);	
 
 			//Opaques the layer being replaced to allow animation to transition smoothly	
 			//Changed this to .hero-text to allow the button to stay when others are opacqued
 			var heroHide2 = $(".hero");											
-			heroHide2.animate({opacity: '0'}, 1800);
+			heroHide2.animate({opacity: '0'}, 800);
 			//This is to fade the Button TExt slower and make it le sexy
 			$("#btn-blue-text").animate({opacity: '0'}, 1200);
 
 			//opaque button blue to 0.3
 			$(".btn-blue" /*front page button*/).animate({opacity: '0.3'}, 500, function(){
-				//move button blue to the left 100 percent
+				//opacque button
 				$(this).animate({
 					opacity: ['0.3', 'swing']
 					}, 400, function() {
-					//Move fake div left to match .btn-blue location
+					//Move #btn-blue div left to match .btn-blue location
 					$("#btn-blue").animate({
 						left: '47.3vw',
 						top: '52vh',
@@ -205,20 +174,18 @@
 							//Exoands #btn-blue div to fit screen w/swing animation	
 								$(this).animate({
 									top: '0',
-									//left: '0', 
 									height: '100%', 
-									//width: ['100%', 'swing'], 
-									//right: '0'
 									}, 300, 'swing', function() {
 									$(this/*carousel*/).animate({left: '0'/*,width: '100%'*/}, 500, function() {
 										$(this/*carousel*/).animate({width: '100%'}, 300, function(){
-											$("#btn-blue-container"/*carousel*/).animate({opacity: ['1', 'swing']}, 1000, function(){
-												$(".carousel-caption").animate({left:'9vw'/*was 5.7em*/, opacity: '1'}, 400, function(){
-													$(".carousel-caption").animate({height: ['100%' , 'swing']}, 700);
-													$(".carousel-caption h3").animate({opacity: '1'}, 800);
+											$("#btn-blue-container"/*carousel*/).animate({opacity: '1'}, 750, function(){
+												$(".carousel-caption").animate({left:'9vw'/*was 5.7em*/, opacity: '1'}, 0, function(){
+													$(".carousel-caption").animate({height: '100%'}, 1000, function(){
+														$(".carousel-caption h3, .cc-intro").animate({opacity: '1'}, 800);
+													});
 												});
-												$(".carousel-caption2").animate({left: '47vw', top: '0', bottom: '0', minWidth: '45vw', opacity: '1'}, 400, function(){
-													$(".carousel-caption2").animate({fontSize: ['3.5vw', 'swing']}, 600);
+												$(".carousel-caption2").animate({opacity: '1'}, 1000, function(){
+													$(".cc2-content").animate({opacity: '1'}, 1000);
 												});
 											});
 										});										
@@ -332,7 +299,7 @@
 			zIndexPages.animate({zIndex: '5'},0);
 
 			//stop all animations on other pages when clicking on a page while another is loading. ex: hitting a propos and then clicking classes immediately	
-			var allStop = $("#btn-blue, .btn-blue, .carousel-caption, .carousel-caption2, .tarifs, .blog, .logo, .tarifs-div, .blog-div, .hero, #tarifs-h1, #blog-h1, .mp-header, .mp-text, .mp-img");
+			var allStop = $("#btn-blue, #btn-blue-container, .carousel-caption, .carousel-caption2, .cc-intro, .cc-title, .cc2-content, .carousel-caption h3, .btn-blue, .tarifs, .blog, .logo, .tarifs-div, .blog-div, .hero, #tarifs-h1, #blog-h1, .mp-header, .mp-text, .mp-img");
 			allStop.stop(true);	
 
 			//Opaques the layer being replaced to allow animation to transition smoothly + adds display: none to BG Video	
@@ -341,13 +308,18 @@
 					$(".fullscreen-bg__video").css({display: 'none'});
 				});
 
-			$(".carousel-caption").animate({height: ['0','swing']}, 600, function(){
-				$(".carousel-caption2").animate({height: ['0','swing']}, 600, function(){
-					$(".carousel-inner img").animate({opacity: ['0','swing']}, 700, function(){
-						$("#btn-blue").animate({top: '0', width: '0.8em', height: '64px'});
-					});
+			
+			//Hides carousel page text and opacques page + sets zIndex of page to be lower than hero
+			ccTwo.animate({opacity: '0'}, 700);
+			carouselHide.animate({zIndex: '-50'}, 0);
+			ccOne.animate({left: '-1000em'}, 700, function(){
+				ccOne.animate({height: '7%'}, 100);
+				carouselHide.animate({opacity: '0'}, 700, function(){
+					$("#btn-blue-text, .btn-blue").animate({opacity: '1'}, 500);
+					carouselHide.animate({width: '0.8em', height: '64px', top: '0', left: '50%'}, 0);
+					carouselCont.animate({opacity: '0'}, 0);
 				});
-			});
+			});	
 
 			var titleHide = $("#tarifs-h1, #blog-h1, .mp-header, .mp-text, .mp-img");	
 			titleHide.animate({opacity: '0'}, 300);
@@ -397,7 +369,7 @@
 			aProposDivContent.animate({opacity: '1'}, 1300);
 			aProposMpText.animate({left: '6em'}, 400);
 			aProposMpHeader.animate({left: '1em'}, 600);
-			aProposMpImg.animate({left: '55em'}, 800);
+			aProposMpImg.animate({left: '49em'}, 800);
 			aProposMpParagraph.animate({left: '3em'}, 1000);
 
 		});	
@@ -431,17 +403,29 @@
 	zIndexPages.animate({zIndex: '5'},0);	
 
 	//stop all animations on other pages when clicking on a page while another is loading. ex: hitting a propos and then clicking classes immediately	
-	var allStop = $(".what-we-do, .blog, .logo, .a-propos-div, .blog-div, .hero, #a-propos-h1, #blog-h1, .mp-header, .mp-text, .mp-img");
+	var allStop = $(".btn-blue, #btn-blue, #btn-blue-container, .carousel-caption, .carousel-caption2, .cc-intro, .cc-title, .cc2-content, .carousel-caption h3, .what-we-do, .blog, .logo, .a-propos-div, .blog-div, .hero, #a-propos-h1, #blog-h1, .mp-header, .mp-text, .mp-img");
 	allStop.stop(true);
 
 	//hide .hero div when user lands on homepage and clicks any page	
 	var heroHide = $(".hero");
 	heroHide.animate({opacity: '0'}, 800);
 
+	//Hides carousel page text and opacques page + sets zIndex of page to be lower than hero
+	ccTwo.animate({opacity: '0'}, 700);
+	carouselHide.animate({zIndex: '-50'}, 0);
+	ccOne.animate({left: '-1000em'}, 700, function(){
+		ccOne.animate({height: '7%'}, 100);
+		carouselHide.animate({opacity: '0'}, 700, function(){
+			$("#btn-blue-text, .btn-blue").animate({opacity: '1'}, 500);
+			carouselHide.animate({width: '0.8em', height: '64px', top: '0', left: '50%'}, 0);
+			carouselCont.animate({opacity: '0'}, 0);
+		});
+	});	
+
 	//Hide content of page user is leaving
 	var titleHide = $("#a-propos-h1, #blog-h1, .mp-header, .mp-text, .mp-img");	
 	titleHide.animate({opacity: '0'}, 300);	
-	titleHide.animate({left: "-100em"}, 100);
+	titleHide.animate({left: "-1000em"}, 100);
 
 	//hide current page		
 	var aproposHide = $(".a-propos-div");
@@ -487,7 +471,7 @@
 	aProposDivContent.animate({opacity: '1'}, 1300);
 	aProposMpText.animate({left: '6em'}, 400);
 	aProposMpHeader.animate({left: '1em'}, 600);
-	aProposMpImg.animate({left: '55em'}, 800);
+	aProposMpImg.animate({left: '49em'}, 800);
 	aProposMpParagraph.animate({left: '3em'}, 1000);		
 	});	
 
@@ -523,12 +507,24 @@
 	zIndexPages.animate({zIndex: '5'},0);
 
 	//stop all animations on other pages when clicking on a page while another is loading. ex: hitting a propos and then clicking classes immediately	
-	var allStop = $(".what-we-do, .tarifs, .logo, .a-propos-div, .tarifs-div, .hero, #a-propos-h1, #tarifs-h1, .mp-header, .mp-text, .mp-img");
+	var allStop = $(".btn-blue, #btn-blue, #btn-blue-container, .carousel-caption, .carousel-caption2, .cc-intro, .cc-title, .cc2-content, .carousel-caption h3, .what-we-do, .tarifs, .logo, .a-propos-div, .tarifs-div, .hero, #a-propos-h1, #tarifs-h1, .mp-header, .mp-text, .mp-img");
 	allStop.stop(true);	
 
 	//Hide the .hero div when animating other pages in from home	
 	var heroHide = $(".hero");
 	heroHide.animate({opacity: '0'}, 800);
+
+	//Hides carousel page text and opacques page + sets zIndex of page to be lower than hero
+	ccTwo.animate({opacity: '0'}, 700);
+	carouselHide.animate({zIndex: '-50'}, 0);
+	ccOne.animate({left: '-1000em'}, 700, function(){
+		ccOne.animate({height: '7%'}, 100);
+		carouselHide.animate({opacity: '0'}, 700, function(){
+			$("#btn-blue-text, .btn-blue").animate({opacity: '1'}, 500);
+			carouselHide.animate({width: '0.8em', height: '64px', top: '0', left: '50%'}, 0);
+			carouselCont.animate({opacity: '0'}, 0);
+		});
+	});	
 
 	//Shift .moving-pages headers and text before fading out	
 	var titleHide = $("#tarifs-h1, #a-propos-h1, .mp-header, .mp-text, .mp-img");	
@@ -579,7 +575,7 @@
 	aProposDivContent.animate({opacity: '1'}, 1300);
 	aProposMpText.animate({left: '6em'}, 400);
 	aProposMpHeader.animate({left: '1em'}, 600);
-	aProposMpImg.animate({left: '55em'}, 800);
+	aProposMpImg.animate({left: '49em'}, 800);
 	aProposMpParagraph.animate({left: '3em'}, 1000);	
 
 	});	
